@@ -1,0 +1,43 @@
+<div class="blackbg">
+    <div class="content ">
+        <div class="container">
+            <div class="m-1">
+                <a routerLink="add" class="btn btn-success me">Add new Name</a>
+            </div>
+            @if (massage) {
+            <div class="alert alert-danger" role="alert">
+                {{massage}}
+            </div>
+            }
+
+            <table class="table table-dark table-striped table-hover">
+                <thead>
+                    <tr>
+
+                        <th scope="col">Name</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">level</th>
+                        <th scope="col" class="text-center" colspan="3">Actions </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(post of posts;track post.id){
+                    <tr scope="row">
+
+                        <td>{{post.name}}</td>
+                        <td>{{post.gander}}</td>
+                        <td>{{post.level}}</td>
+                        <td><a class="btn btn-primary"
+                                routerLink="update/{{post.id}}">Edit</a></td>
+                        <td><a class="btn btn-info"
+                                routerLink="show/{{post.id}}">Show</a></td>
+                        <td><a class="btn btn-danger"
+                                (click)="removeItem(post.id)">Delete</a></td>
+
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

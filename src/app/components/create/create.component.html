@@ -1,0 +1,31 @@
+<div class="container">
+    <form class=" rounded">
+       <div class="my-3">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name Is</label>
+            <input type="text" name="name" [(ngModel)]="post.name" class="form-control" id="name">
+          </div> 
+          <div class="mb-3">
+            <label for="level" class="form-label">Level Is</label>
+            <input type="text" name="level" [(ngModel)]="post.level"  class="form-control" id="level">
+          </div>
+         
+          <div hidden class="mb-3">
+            <label for="message" class="form-label">Message Is</label>
+            <input type="text" name="message"  value="" class="form-control" id="name">
+          </div> 
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01">Gender Is</label>
+            <select class="form-select" name="gander" [(ngModel)]="post.gander"  id="inputGroupSelect01">
+              <option selected disabled>Choose Gender...</option>
+              <option value="Male">Male</option>
+              <option value="Female">female</option>
+              <option value="Other">other</option>
+            </select>
+          </div>
+          <div class="d-g">
+              <button (click)="creatData()" type="submit" class="btn btn-primary">Submit</button>
+          </div>  
+       </div>  
+      </form>
+</div>
